@@ -49,7 +49,9 @@ const iniciarRegistro = async (req, res) => {
     const registroString = JSON.stringify(entradasArray)
     await fs.writeFile('./src/registros/entradas.json', registroString)
 
-    return res.status(200).json(usuarioEmServico)
+    return res.status(200).json({
+        'Mensagem': 'Registro iniciado!'
+    })
 }
 
 module.exports = iniciarRegistro
