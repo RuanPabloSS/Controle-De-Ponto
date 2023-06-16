@@ -1,7 +1,8 @@
 const { converterArquivo, encontrarUsuario } = require("../utils/utils")
 
 const verificarUsuarioESenha = async (req, res, next) => {
-    let { id, senha } = req.query
+    const { senha } = req.query
+    let { id } = req.params
     id = Number(id)
 
     if (!id) {
@@ -65,4 +66,4 @@ const verificarDadosCadastro = (req, res, next) => {
     next()
 }
 
-module.exports = { verificarUsuarioESenha, verificarDadosCadastro }
+module.exports = { verificarUsuarioESenha, verificarDadosCadastro, }

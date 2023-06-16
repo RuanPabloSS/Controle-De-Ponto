@@ -2,7 +2,8 @@ const { converterArquivo, encontrarIndice, encontrarUsuario, formatarData } = re
 const fs = require('fs/promises')
 
 const iniciarRegistro = async (req, res) => {
-    let { id, senha } = req.query
+    const { senha } = req.query
+    let { id } = req.params
     id = Number(id)
 
     const usuarios = await converterArquivo()
