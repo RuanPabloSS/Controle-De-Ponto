@@ -8,8 +8,8 @@ const deletarUsuario = require('./controladores/deletar')
 
 const rotas = express.Router()
 
-rotas.put('/iniciar/:id', verificarUsuarioESenha, iniciarRegistro)
 rotas.post('/criar', verificarDadosCadastro, criarUsuario)
+rotas.put('/iniciar/:id', verificarUsuarioESenha, iniciarRegistro)
 rotas.put('/parar/:id', verificarUsuarioESenha, finalizarRegistro)
 rotas.get('/registros/:id', verificarUsuarioESenha, exibirRegistros)
 rotas.get('/horasTrabalhadas/:id', verificarUsuarioESenha, exibirHorasTrabalhadas)

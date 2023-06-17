@@ -1,4 +1,4 @@
-const { obterEntradas, obterSaidas } = require("./utils/utils")
+const { obterEntradas, obterSaidas, encontrarUsuario, converterArquivo } = require("./utils/utils")
 const { intervalToDuration } = require('date-fns')
 
 const exibirRegistros = async (req, res) => {
