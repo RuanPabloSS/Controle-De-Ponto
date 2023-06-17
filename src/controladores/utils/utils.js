@@ -43,4 +43,24 @@ const formatarData = () => {
     return dataFormatada
 }
 
-module.exports = { converterArquivo, encontrarUsuario, encontrarIndice, existeCpf, formatarData }
+const obterEntradas = async (id) => {
+    const entradas = await fs.readFile('./src/registros/entradas.json')
+    const entradasArray = JSON.parse(entradas)
+    const entradasUsuario = entradasArray.filter((entrada) => {
+        return entrada.id === id
+    })
+
+    return entradasUsuario
+}
+
+const obterSaidas = async (id) => {
+    const saidas = await fs.readFile('./src/registros/saidas.json')
+    const saidasArray = JSON.parse(saidas)
+    const saidasUsuario = saidasArray.filter((saida) => {
+        return saida.id === id
+    })
+
+    return saidasUsuario
+}
+
+module.exports = { converterArquivo, encontrarUsuario, encontrarIndice, existeCpf, formatarData, obterEntradas, obterSaidas }
